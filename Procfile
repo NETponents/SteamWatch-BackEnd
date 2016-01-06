@@ -1,1 +1,1 @@
-web: ruby ./main.rb
+web: node ./bin/www

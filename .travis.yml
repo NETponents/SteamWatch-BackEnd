@@ -1,13 +1,6 @@
-language: ruby
-cache: bundler
-rvm:
-  - 2.2.1
-git:
-  submodules: false
-env:
-  global:
-    - RACK_ENV=test
-    - CODACY_PROJECT_TOKEN=0
+language: node_js
+node_js:
+  - stable
 notifications:
   email:
     recipients:
@@ -17,15 +10,10 @@ notifications:
 branches:
   only:
     - master
-install:
-  - bundle install
 before_script:
   - psql -c 'create database travis_ci_test;' -U postgres
-script:
-  - rake test --trace
 deploy:
   provider: heroku
   api_key: "0"
   app: 0
-  skip_cleanup: true
-  run: "rake db:migrate"
+  skip_cleanup: false
