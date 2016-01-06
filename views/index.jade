@@ -1,5 +1,28 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+    link(rel="stylesheet", href="/stylesheets/home.css")
+    div(class="site-wrapper")
+        div(class="site-wrapper-inner")
+            div(class="cover-container")
+                div(class="masthead clearfix")
+                    div(class="inner")
+                        h3(class="masthead-brand") SteamWatch
+                        nav
+                            ul(class="nav masthead-nav")
+                                li(class="active")
+                                    a(href="/") Home
+                                li
+                                    a(href="/download") Download
+                                li
+                                    a(href="/faq") FAQ
+                                li
+                                    a(href="/contact") Contact
+            div(class="inner cover")
+                h1(class="cover-heading") Connect with your games.
+                p(class="lead") SteamWatch is an open-source web API that allows you to get updates from Valve's Steam network on your Microsoft Band.
+                p(class="lead")
+                    a(href="/download", class="btn btn-lg btn-default") Get Started >
+            div(class="mastfoot")
+                div(class="inner")
+                    p Website built with Bootstrap. All other content is licensed under the GPL v2.0 OSS license by Joshua Zenn.

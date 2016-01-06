@@ -1,0 +1,36 @@
+extends layout
+
+block content
+    link(rel="stylesheet", href="/stylesheets/infopage.css")
+    nav(class="navbar navbar-default navbar-fixed-top")
+        div(class="container")
+            div(class="navbar-header")
+                button(type="button", class="navbar-toggle collapsed", data-toggle="collapse", data-target="#navbar", aria-expanded="false", aria-controls="navbar")
+                span(class="sr-only") Toggle navigation
+                span(class="icon-bar")
+                span(class="icon-bar")
+                span(class="icon-bar")
+                a(class="navbar-brand", href="/") SteamWatch
+            div(id="navbar", class="navbar-collapse collapse")
+                ul(class="nav navbar-nav")
+                    li
+                        a(href="/") Home
+                    li
+                        a(href="/about") Download
+                    li(class="active")
+                        a(href="/faq") FAQ
+                    li
+                        a(href="/contact") Contact
+    div(class="container")
+        h1 What is SteamWatch?
+        p Steamwatch is an addon to the Microsoft Health app that will periodically deliver updates from your Steam profile to your Microsoft Band.
+        h1 Does it cost anything?
+        p Nope, but we do take donations on Gratipay! [link broken]
+        h1 What do I do if I find a bug?
+        p Tell us about it on the project Github page. [link broken]
+        h1 Why is it so hard to configure SteamWatch?
+        p We've made the setup process as easy as possible, but we are working on a tool to make it even easier.
+        h1 How do I get started?
+        p Head on over to the download page and follow the instructions. [link broken]
+        h1 My watch won't update.
+        p Make sure you provided the correct user ID during setup. Also make sure that your profile is public (people can see your profile, even if you're not friends).
