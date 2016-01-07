@@ -5,15 +5,13 @@ notifications:
   email:
     recipients:
       - wordman05@gmail.com
-    on_success: change
-    on_failure: always
 branches:
   only:
     - master
-before_script:
-  - psql -c 'create database travis_ci_test;' -U postgres
+script:
+    - echo 'TODO: set up testing.'
 deploy:
   provider: heroku
-  api_key: "0"
-  app: 0
+  api_key: "9951e24c-b489-48fe-8a60-b325e8d850dd"
+  app: steamwatch
   skip_cleanup: false
