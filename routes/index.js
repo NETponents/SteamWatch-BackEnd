@@ -12,8 +12,8 @@ router.get('/faq', function(req, res, next) {
 router.get('/download', function(req, res, next) {
     res.render('download', {title: 'Download'});
 });
-router.get('/contact', function(req, res, next) {
-    res.render('contact', {title: 'Contact'});
+router.get('/about', function(req, res, next) {
+    res.render('about', {title: 'About'});
 });
 
 module.exports = router;
