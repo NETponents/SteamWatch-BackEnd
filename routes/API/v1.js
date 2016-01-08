@@ -53,11 +53,11 @@ router.get('/player/info/:uid', function(req, res, next) {
   });
   var result = {
       me : {
-          username : "{{data_username}}",
-          status : "{{data_userstatus}}",
+          username : data_username,
+          status : data_userstatus,
           lastGame : {
               title : "SampleGame",
-              date : "{{data_lastlogoff}}",
+              date : data_lastlogoff,
               playTime : "42"
           }
       },
