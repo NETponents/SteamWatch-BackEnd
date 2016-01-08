@@ -23,3 +23,16 @@ block content
                         a(href="/about") About
     div(class="container")
         h1 Download
+        p To get started with SteamWatch, download the .zip of the repository at <a href="http://github.com/NETponents/SteamWatch">github.com/NETponents/SteamWatch</a>.
+        p Unzip the file to a location to your hard drive. From now on, <code>~/</code> will reference the location you unzipped the file to.
+        br
+        p Now open up <code>~/app/manifest.json</code> using Notepad or a similar program.
+        p Find the line that looks like this:
+        p <code>"url" : "http://steamwatch.herokuapp.com/api/v1/player/info/XXXXXXXXX",</code>
+        p Replace the XXXXXXXXX part with your Steam Community ID. You can find it by looking for the long number in the URL to your Steam profile page.
+        br
+        p Save and close the file. Now copy all of the files in <code>~/app</code> into an empty .zip file called <code>steamwatch.zip</code>.
+        p Now rename <code>steamwatch.zip</code> to <code>steamwatch.webtile</code>. <b>Make sure that the file ends in .webtile and not .zip!</b>
+        br
+        p The final step is to email the file to yourself and open the attachment on any smartphone that is running the Microsoft Health app and is actively paired with a Microsoft Band 1 or 2.
+        p That's it! Note that when we have major updates to the software, we will depreciate the old version of the API. To update your copy of SteamWatch, just follow these instructions again using the latest source from GitHub.
