@@ -21,7 +21,7 @@ router.get('/player/info/:uid', function(req, res, next) {
       me : {
           username : "SampleGamer",
           status : "Online",
-          lastgame : {
+          lastGame : {
               title : "SampleGame",
               date : "Yesterday",
               playTime : "42"
