@@ -11,19 +11,53 @@ router.get('/sw/news', function(req, res, next) {
 });
 
 router.get('/player/info/:uid', function(req, res, next) {
-  /* Blocked out until we get an API key.
-  =======================================
-  var request = unirest.get("https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v2?key=X&steamids=" + req.params.uid);
+  var data_username = "";
+  var data_userstatus = "";
+  var data_lastlogoff = "";
+  var request = unirest.get("https://api.steampowered.com/ISteamUser/GetPlayerSummaries/v2?key=" + process.env.STEAMKEY + "&steamids=" + req.params.uid);
   request.end(function (response) {
-      res.json(response.body);
-  });*/
+      data_username = response.body.personaname;
+      if(response.body.personastate == 0)
+      {
+          data_userstatus = "Offline";
+      }
+      else if(response.body.personastate == 1)
+      {
+          data_userstatus = "Online";
+      }
+      else if(response.body.personastate == 2)
+      {
+          data_userstatus = "Busy";
+      }
+      else if(response.body.personastate == 3)
+      {
+          data_userstatus = "Away";
+      }
+      else if(response.body.personastate == 4)
+      {
+          data_userstatus = "Snooze";
+      }
+      else if(response.body.personastate == 5)
+      {
+          data_userstatus = "Looking to Trade";
+      }
+      else if(response.body.personastate == 6)
+      {
+          data_userstatus = "Looking to Play";
+      }
+      else
+      {
+          data_username = "Unknown";
+      }
+      data_lastlogoff = response.body.lastlogoff;
+  });
   var result = {
       me : {
-          username : "SampleGamer",
-          status : "Online",
+          username : "{{data_username}}",
+          status : "{{data_userstatus}}",
           lastGame : {
               title : "SampleGame",
-              date : "Yesterday",
+              date : "{{data_lastlogoff}}",
               playTime : "42"
           }
       },
